@@ -1,17 +1,17 @@
-// Hello world project thuan node js
-const http = require('http');//node.js
+const http = require('http'); // Sử dụng thư viện http của Node.js
 
-// const hostname = 'localhost';
-const port = process.env.PORT || 3005;
+const port = process.env.PORT || 3005; // Sử dụng biến môi trường PORT nếu có hoặc 3005
 
-const server = http.createServer((req, res)=>{
+const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello World');
 });
+
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
-server.listen(port () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-  });
+// Lắng nghe trên cổng được chỉ định mà không cần hostname
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
