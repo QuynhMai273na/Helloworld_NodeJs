@@ -1,7 +1,7 @@
 // Hello world project thuan node js
 const http = require('http');//node.js
 
-const hostname = 'localhost';
+// const hostname = 'localhost';
 const port = process.env.PORT || 3005;
 
 const server = http.createServer((req, res)=>{
@@ -12,6 +12,6 @@ const server = http.createServer((req, res)=>{
 server.keepAliveTimeout = 120 * 1000;
 server.headersTimeout = 120 * 1000;
 
-server.listen(port, hostname, () => {
+server.listen(port () => {
     console.log(`Server running at http://${hostname}:${port}/`);
   });
